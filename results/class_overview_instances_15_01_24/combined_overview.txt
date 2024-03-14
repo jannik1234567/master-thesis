@@ -1,24 +1,24 @@
 class	class_name	count_train	count_valid	count_test	sum_count
-9	Fagus Sylvatica	1055	298	148	1501
-17	Pseudotsuga Menziesii	764	219	110	1093
-19	Quercus Spp	516	149	74	739
-13	Picea Abies	393	113	56	562
-22	Tilia Spp	374	111	53	538
-6	Carpinus Betulus	356	99	52	507
-16	Prunus Avium	328	94	46	468
-12	Larix Decidua	320	93	46	459
-14	Pinus Sylvestris	320	91	45	456
-3	Acer Pseudoplatanus	305	88	43	436
-0	Abies Alba	225	64	32	321
-10	Fraxinus Excelsior	205	64	29	298
-2	Acer Platanoides	159	44	23	226
-4	Alnus Spp	154	48	22	224
-20	Robinia Pseudoacacia	146	38	21	205
-5	Betula Spp	133	37	19	189
-7	Castanea Sativa	129	38	18	185
-1	Acer Campestre	71	19	13	103
-21	Salix Spp	69	16	11	96
-15	Populus Spp	51	15	7	73
-18	Quercus Rubra	54	13	6	73
-11	Juglans Regia	48	13	8	69
-8	Corylus Avellana	46	12	6	64
+0	abies_alba	225	64	32	321
+1	acer_campestre	71	19	13	103
+10	fraxinus_excelsior	205	64	29	298
+11	juglans_regia	48	13	8	69
+12	larix_decidua	320	93	46	459
+13	picea_abies	393	113	56	562
+14	pinus_sylvestris	320	91	45	456
+15	populus_spp	51	15	7	73
+16	prunus_avium	328	94	46	468
+17	pseudotsuga_menziesii	764	219	110	1093
+18	quercus_rubra	54	13	6	73
+19	quercus_spp	516	149	74	739
+2	acer_platanoides	159	44	23	226
+20	robinia_pseudoacacia	146	38	21	205
+21	salix_spp	69	16	11	96
+22	tilia_spp	374	111	53	538
+3	acer_pseudoplatanus	305	88	43	436
+4	alnus_spp	154	48	22	224
+5	betula_spp	133	37	19	189
+6	carpinus_betulus	356	99	52	507
+7	castanea_sativa	129	38	18	185
+8	corylus_avellana	46	12	6	64
+9	fagus_sylvatica	1055	298	148	1501
