@@ -4,9 +4,10 @@ import os
 import csv
 
 FOLDER_PATH = r""
+OUT_FOLDER = r""
 
 
-def get_class_count(folder_path):
+def get_class_count(folder_path, out_folder):
     """
     This function counts the number of instances of each class and the number of images per class in a given folder.
     """
@@ -38,7 +39,7 @@ def get_class_count(folder_path):
 
             # first class overview
             overview_file = os.path.join(
-                folder_path, f"cls_overview_{name}.txt")
+                out_folder, f"cls_overview_{name}.txt")
             with open(overview_file, 'w', newline='') as txtfile:
                 fieldnames = ['class', 'count']
                 writer = csv.DictWriter(txtfile, fieldnames=fieldnames)
@@ -49,7 +50,7 @@ def get_class_count(folder_path):
 
             # second image overview
             img_overview_file = os.path.join(
-                folder_path, f"img_overview_{name}.txt")
+                out_folder, f"img_overview_{name}.txt")
             with open(img_overview_file, 'w', newline='') as txtfile:
                 fieldnames = ['class', 'count']
                 writer = csv.DictWriter(txtfile, fieldnames=fieldnames)
@@ -60,4 +61,4 @@ def get_class_count(folder_path):
 
 
 if __name__ == '__main__':
-    get_class_count(folder_path=FOLDER_PATH)
+    get_class_count(folder_path=FOLDER_PATH, out_folder=OUT_FOLDER)
