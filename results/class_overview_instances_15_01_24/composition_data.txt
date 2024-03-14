@@ -1,0 +1,25 @@
+ID	Species	Number of trees	Number of images
+0	Abies alba	151	324
+1	Acer campestre	38	99
+2	Acer platanoides	130	228
+3	Acer pseudoplatanus	164	430
+4	Alnus spp	84	206
+5	Betula spp	110	183
+6	Carpinus betulus	263	482
+7	Castanea sativa	85	184
+8	Corylus avellana	18	61
+9	Fagus sylvatica	550	1484
+10	Fraxinus excelsior	126	277
+11	Juglans regia	26	68
+12	Larix decidua	180	457
+13	Picea abies	176	562
+14	Pinus sylvestris	219	457
+15	Populus spp	44	73
+16	Prunus avium	146	470
+17	Pseudotsuga menziesii	421	1087
+18	Quercus rubra	47	70
+19	Quercus spp	323	744
+20	Robinia pseudoacacia	92	195
+21	Salix spp	24	83
+22	Tilia spp	243	532
+Total	-	3660	8756
