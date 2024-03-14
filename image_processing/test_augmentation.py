@@ -8,7 +8,7 @@ transform = A.Compose([
 ])
 
 image = cv2.imread(
-    r"C:\Users\janni\Dokumente\Masterarbeit\images\test\test_image\1668412977862_jpg.rf.7ae946dc550b3acb983b948d0308e103.jpg")
+    r"")
 
 
 transformed_image = transform(image=image)['image']
