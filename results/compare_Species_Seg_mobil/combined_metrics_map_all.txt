@@ -1,0 +1,4 @@
+species	model	MAP_05_095
+all	map_50_95_mask_n_base	0.918798327009404
+all	map_50_95_mask_n_weighted	0.930067746508355
+all	map_50_95_mask_n_weighted_augment	0.928777649918766
