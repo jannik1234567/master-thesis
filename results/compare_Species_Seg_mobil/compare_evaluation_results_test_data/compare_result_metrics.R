@@ -50,7 +50,6 @@ data_plot %>%
   # ggtitle("Comparison of MAP (50-95) for masks between YOLO models") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
-  theme(legend.position="top") +
   theme(legend.position="top",
         legend.margin=margin(b = -7),  # Adjust this value to suit your needs
         text= element_text(family = "serif", size=12),
