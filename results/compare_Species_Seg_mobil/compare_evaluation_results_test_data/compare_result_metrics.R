@@ -12,12 +12,13 @@ lowercase_second_word <- function(x) {
 
 df_metrics_base_n <- read.table("plots_and_tables/metrics_yolo_n_base_conf_standard.txt", header = T)
   
-df_my_model <- read.table("plots_and_tables/metrics_yolo_n_weighted_sampler_augment_conf_standard.txt", header = T)
+df_my_model <- read.table("plots_and_tables/metrics_yolo_n_weighted_sampler_augment_tuned_conf_standard.txt", header = T)
+
 # combine data
 data <- df_metrics_base_n %>% 
   merge(., df_my_model, by=c("species", "class_index")) %>% 
-  select(class_index, species, f1_mask_n_base, f1_mask_n_weighted_augment,
-         map_50_95_mask_n_base, map_50_95_mask_n_weighted_augment) %>% 
+  select(class_index, species, f1_mask_n_base, f1_mask_n_weighted_tuned,
+         map_50_95_mask_n_base, map_50_95_mask_n_weighted_tuned) %>% 
   mutate(species = replace(species, str_detect(species, "all"), "aall")) %>%
   arrange(species) %>%
   mutate(species = replace(species, str_detect(species, "aall"), "all")) %>% 
@@ -26,20 +27,28 @@ data <- df_metrics_base_n %>%
 
 # Apply the function to your column
 data$species <- sapply(data$species, lowercase_second_word)
-data$species[1] <- "All"
+data$species[1] <- "Overall"
+
+
+data_my_model <- data %>% 
+  select(class_index, species, f1_mask_n_weighted_tuned,  map_50_95_mask_n_weighted_tuned) 
+
+data_base_model <- data %>% 
+  select(class_index, species, f1_mask_n_base, map_50_95_mask_n_base)
+  
+
+write.table(data_my_model, "SpeciesSeg_metrics.txt", sep = "\t", row.names = FALSE, quote=FALSE)
+
+write.table(data_base_model, "YOLO_base_metrics.txt", sep = "\t", row.names = FALSE, quote=FALSE)
 
 
 data_plot <- data %>% 
-  select(species, map_50_95_mask_n_base,  map_50_95_mask_n_weighted_augment) 
-  
-
-write.table(data_plot, "combined_metrics.txt", sep = "\t", row.names = FALSE, quote=FALSE)
-
+  select(species, map_50_95_mask_n_base,  map_50_95_mask_n_weighted_tuned)
 
 # compare model MAP 50 95 mask between models:
 data_plot %>%
-  rename("YOLOv8n-seg" = map_50_95_mask_n_base,
-         "SpeciesSeg-mobil" = map_50_95_mask_n_weighted_augment) %>% 
+  rename("YOLOv8n-Seg" = map_50_95_mask_n_base,
+         "SpeciesSeg-mobil" = map_50_95_mask_n_weighted_tuned) %>% 
   pivot_longer(!species, names_to = "Model", values_to = "map_05_095") %>% 
   ggplot(., aes(x=fct_inorder(species), y = map_05_095, fill = Model)) + 
   geom_bar(stat='identity', position = position_dodge()) +
@@ -56,13 +65,3 @@ data_plot %>%
         plot.margin = margin(0.1, 0.1, 0.1, 0.1, "cm"))
 
 ggsave("comparison_map_05_095.pdf", width = 5.9, height = 5.9/1.5)
-
-data_filtered <- data %>% 
-  select(c(species, map_50_95_mask_n_base, map_50_95_mask_n_weighted, 
-           map_50_95_mask_n_weighted_augment)) %>% 
-  filter(species == 'all') %>% 
-  pivot_longer(!species, names_to = "model", values_to = "MAP_05_095")
-
-write.table(data_filtered, 
-            "combined_metrics_map_all.txt", 
-            sep = "\t", row.names = FALSE, quote=FALSE)
