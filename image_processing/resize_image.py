@@ -3,7 +3,7 @@ from pathlib import Path
 import cv2
 
 files = Path(
-    r"").glob('*.jpg')
+    r"C:\Users\janni\Dokumente\Masterarbeit\python_scripts\final_python_scripts\master-thesis\data_set_overview_images\examples_mobil_phone_data").glob('*.jpg')
 
 
 for file in files:
@@ -11,7 +11,7 @@ for file in files:
     image = cv2.imread(str(file))
 
     height, width, _ = image.shape
-    new_height = 640
+    new_height = 160
 
     new_width = round(width//(height/new_height))
     new_image = cv2.resize(image, (new_width, new_height),
