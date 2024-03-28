@@ -64,4 +64,4 @@ data_plot %>%
         text= element_text(family = "serif", size=12),
         plot.margin = margin(0.1, 0.1, 0.1, 0.1, "cm"))
 
-ggsave("comparison_map_05_095.pdf", width = 5.9, height = 5.9/1.5)
+ggsave("comparison_map_05_095.png", width = 5.9, height = 5.9/1.5)

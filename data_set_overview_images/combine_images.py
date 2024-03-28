@@ -40,6 +40,6 @@ for i_file, file in enumerate(img_files):
                     fontweight='bold', color='white', bbox=dict(facecolor='black', edgecolor='black'))
 
 
-plt.savefig(os.path.join(output_folder, f'combined_TLS.jpg'),
+plt.savefig(os.path.join(output_folder, f'combined_TLS.png'),
             dpi=300, bbox_inches='tight')
 plt.close()
