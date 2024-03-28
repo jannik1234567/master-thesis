@@ -3,7 +3,7 @@ from pathlib import Path
 import cv2
 
 files = Path(
-    r"C:\Users\janni\Dokumente\Masterarbeit\python_scripts\final_python_scripts\master-thesis\data_set_overview_images\examples_mobil_phone_data").glob('*.jpg')
+    r"").glob('*.jpg')
 
 
 for file in files:
